@@ -2,23 +2,99 @@
 <html>
 <head>
   <title>Parcel Packaging Software</title>
+  <style type="text/css">
+    html, body {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      background: url(images/6.jpg) right bottom no-repeat;
+    }
+
+    input {
+      font-size: 16px;
+      outline: 0;
+      border: 1px solid #ccc;
+      padding: 3px 6px;
+    }
+
+    input[type="number"] {
+      margin-right: 15px;
+      transition: .6s border;
+    }
+
+    input[type="number"]:focus {
+      border: 1px solid #3399FF;
+    }
+
+    .container {
+      width: 960px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: arial, sans;
+      font-size: 16px;
+      color: #555;
+    }
+
+    #template {
+      padding: 15px 0 20px 0;
+    }
+
+    #template img {
+      vertical-align: middle;
+    }
+
+    #result {
+      display: inline-block;
+      padding: 30px 0 50px 0;
+    }
+
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 1px solid #ccc;
+      margin: 0;
+      padding: 16px 0 20px 0;
+      font-weight: normal;
+    }
+
+    h3 {
+      margin: 0;
+      font-weight: normal;
+      padding: 0 0 8px 0;
+    }
+
+    .form-group label {
+      /*display: block;*/
+    }
+
+    .form-group {
+      display: inline-block;
+      text-align: left;
+    }
+  </style>
   <script type="text/javascript" src="scripts/app.js"></script>
 </head>
 <body>
-  <h1>Parcel Packaging Software</h1>
-  <div id="template">
-    <input type="radio" name="template" value="1" id="t1" checked><label for="t1">template 1</label>
-    <input type="radio" name="template" value="2" id="t2"><label for="t2">template 2</label>
-    <input type="radio" name="template" value="3" id="t3"><label for="t3">template 3</label>
+  <div class="container">
+    <h1>Parcel Packaging Software</h1>
+    <div id="template">
+      <h3>1. Choose box template.</h3>
+      <input type="radio" name="template" value="1" id="t1" checked><label for="t1"><img src="images/box.png" width="36"></label>
+    </div>
+    <div id="dimensions">
+      <h3>2. Enter your parcel dimensions.</h3>  
+      <div class="form-group"><label for="">Width:</label><input id="width" type="number" value=""></div>
+      <div class="form-group"><label for="">Height:</label><input id="height" type="number" value=""></div>
+      <div class="form-group"><label for="">Depth:</label><input id="depth" type="number" value=""></div>
+    </div>
+    <div id="result">
+      <canvas id="result-canvas">
+      </canvas>
+    </div>
   </div>
-  <div id="dimensions">
-    <label for="">Width:</label><input type="number">
-    <label for="">Height:</label><input type="number">
-    <label for="">Depth:</label><input type="number">
-  </div>
-  <div id="result">
-    <canvas id="result-canvas">
-    </canvas>
-  </div>
-</body>
+  </body>
 </html>
