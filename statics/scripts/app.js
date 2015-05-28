@@ -19,7 +19,7 @@ function init() {
 }
 
 function handleInputChange() {
-  var mw, mh, md, max;
+  var max;
   var w = _width.value >> 0;
   var h = _height.value >> 0;
   var d = _depth.value >> 0;
@@ -58,9 +58,9 @@ function drawBox(w, h, d) {
   var con = canvas.getContext('2d');
   var startX = d * 2 + d * peakH + 1;
   var startY = d + 1;
+  var add;
 
   con.strokeStyle = "#000000";
-  con.fillStyle = "red";
   con.globalAlpha = 1;
   con.lineWidth = 1;
   con.setLineDash([8, 4, 8, 4]);
