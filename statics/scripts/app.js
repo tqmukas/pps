@@ -91,17 +91,17 @@ function drawBox(w, h, d) {
   con.beginPath();
   
   con.moveTo(startX, startY);
-  con.lineTo(startX + w * sub, startY - d * off);
-  con.lineTo(startX + w - w * sub, startY - d * off);
+  con.lineTo(startX + w * sub, startY - Math.min(w, h, d) * off);
+  con.lineTo(startX + w - w * sub, startY - Math.min(w, h, d) * off);
   con.lineTo(startX + w, startY);
 
-  con.lineTo(startX + w + d * off, startY + h * sub);
-  con.lineTo(startX + w + d * off, startY + h - h * sub);
+  con.lineTo(startX + w + Math.min(w, h, d) * off, startY + h * sub);
+  con.lineTo(startX + w + Math.min(w, h, d) * off, startY + h - h * sub);
   con.lineTo(startX + w, startY + h);
 
-  con.lineTo(startX + w + d * off, startY + h);
-  con.lineTo(startX + w + d, startY + h + d * on);
-  con.lineTo(startX + w + d, startY + h + d);
+  con.lineTo(startX + w + Math.min(w, h, d) * off, startY + h);
+  con.lineTo(startX + w + Math.min(w, h, d), startY + h + d * on);
+  con.lineTo(startX + w + Math.min(w, h, d), startY + h + d);
 
   con.moveTo(startX + w, startY + h + d);
   con.lineTo(startX + w + d * 2, startY + h + d);
@@ -112,12 +112,12 @@ function drawBox(w, h, d) {
   con.lineTo(startX + w + d * 2, startY + h + d + h);
   con.lineTo(startX + w, startY + h + d + h);
 
-  con.moveTo(startX + w + d, startY + h + d + h);
-  con.lineTo(startX + w + d, startY + h + d + h + d * off);
-  con.lineTo(startX + w + d * off, startY + h + d + h + d);
-  con.lineTo(startX - d * off, startY + h + d + h + d);
-  con.lineTo(startX - d, startY + h + d + h + d * off);
-  con.lineTo(startX - d, startY + h + d + h);
+  con.moveTo(startX + w + Math.min(w, h, d), startY + h + d + h);
+  con.lineTo(startX + w + Math.min(w, h, d), startY + h + d + h + d * off);
+  con.lineTo(startX + w + Math.min(w, h, d) * off, startY + h + d + h + d);
+  con.lineTo(startX - Math.min(w, h, d) * off, startY + h + d + h + d);
+  con.lineTo(startX - Math.min(w, h, d), startY + h + d + h + d * off);
+  con.lineTo(startX - Math.min(w, h, d), startY + h + d + h);
 
   con.moveTo(startX, startY + h + d + h);
   con.lineTo(startX - d * 2, startY + h + d + h);
@@ -128,13 +128,13 @@ function drawBox(w, h, d) {
   con.lineTo(startX - d * 2, startY + h + d);
   con.lineTo(startX, startY + h + d);
 
-  con.moveTo(startX - d, startY + h + d);
-  con.lineTo(startX - d, startY + h + d * on);
-  con.lineTo(startX - d * off, startY + h);
+  con.moveTo(startX - Math.min(w, h, d), startY + h + d);
+  con.lineTo(startX - Math.min(w, h, d), startY + h + d * on);
+  con.lineTo(startX - Math.min(w, h, d) * off, startY + h);
   con.lineTo(startX, startY + h);
 
-  con.lineTo(startX - d * off, startY + h - h * sub);
-  con.lineTo(startX - d * off, startY + h * sub);
+  con.lineTo(startX - Math.min(w, h, d) * off, startY + h - h * sub);
+  con.lineTo(startX - Math.min(w, h, d) * off, startY + h * sub);
   con.lineTo(startX, startY);
 
   con.moveTo(startX - d, startY + h + d + h * peakW * 2);
